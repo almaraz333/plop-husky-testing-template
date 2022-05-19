@@ -6,42 +6,58 @@ module.exports = (plop) => {
         type: "input",
         name: "name",
         message: "What is your component's name?"
+      },
+      {
+        type: "input",
+        name: "addStyles",
+        message: "Does this component need styles? (y/n)"
       }
     ],
-    actions: [
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.tsx",
-        templateFile: "plop-templates/Component/component.js.hbs"
-      },
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
-        templateFile: "plop-templates/Component/component.test.js.hbs"
-      },
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/index.ts",
-        templateFile: "plop-templates/Component/index.js.hbs"
-      },
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/types.ts",
-        templateFile: "plop-templates/Component/types.js.hbs"
-      },
-      {
-        type: "add",
-        path: "src/components/index.ts",
-        templateFile: "plop-templates/index.js.hbs",
-        skipIfExists: true
-      },
-      {
-        type: "append",
-        path: "src/components/index.ts",
-        pattern: `/* PLOP_INJECT_EXPORT */`,
-        template: `export { {{pascalCase name}} } from './{{pascalCase name}}';`
+    actions: function (data) {
+      let actions = [
+        {
+          type: "add",
+          path: "src/components/{{pascalCase name}}/{{pascalCase name}}.tsx",
+          templateFile: "plop-templates/Component/component.js.hbs"
+        },
+        {
+          type: "add",
+          path: "src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
+          templateFile: "plop-templates/Component/component.test.js.hbs"
+        },
+        {
+          type: "add",
+          path: "src/components/{{pascalCase name}}/index.ts",
+          templateFile: "plop-templates/Component/index.js.hbs"
+        },
+        {
+          type: "add",
+          path: "src/components/{{pascalCase name}}/types.ts",
+          templateFile: "plop-templates/Component/types.js.hbs"
+        },
+        {
+          type: "add",
+          path: "src/components/index.ts",
+          templateFile: "plop-templates/index.js.hbs",
+          skipIfExists: true
+        },
+        {
+          type: "append",
+          path: "src/components/index.ts",
+          pattern: `/* PLOP_INJECT_EXPORT */`,
+          template: `export { {{pascalCase name}} } from './{{pascalCase name}}';`
+        }
+      ];
+
+      if (data.addStyles === "y") {
+        actions.push({
+          type: "add",
+          path: "src/components/{{pascalCase name}}/{{pascalCase name}}.scss"
+        });
       }
-    ]
+
+      return actions;
+    }
   });
 
   plop.setGenerator("Hook", {
