@@ -1,4 +1,6 @@
-import { expect } from "@jest/globals";
+/// <reference types="jest" />
+
+import App from "./App";
 
 describe("App test", () => {
   it("returns true", () => {
