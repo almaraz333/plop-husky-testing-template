@@ -113,7 +113,7 @@ module.exports = (plop) => {
       {
         type: "add",
         path: "src/utils/{{camelCase name}}/{{camelCase name}}.ts",
-        templateFile: "plop-templates/Utils/util.js.hbs"
+        templateFile: "plop-templates/Util/util.js.hbs"
       },
       {
         type: "add",
@@ -130,12 +130,17 @@ module.exports = (plop) => {
       {
         type: "add",
         path: "src/utils/{{camelCase name}}/{{camelCase name}}.spec.ts",
-        templateFile: "plop-templates/Utils/util.spec.js.hbs"
+        templateFile: "plop-templates/Util/util.spec.js.hbs"
       },
       {
         type: "add",
         path: "src/utils/{{camelCase name}}/index.ts",
-        templateFile: "plop-templates/Utils/index.js.hbs"
+        templateFile: "plop-templates/Util/index.js.hbs"
+      },
+      {
+        type: "add",
+        path: "src/utils/{{camelCase name}}/types.ts",
+        templateFile: "plop-templates/Util/types.js.hbs"
       }
     ]
   });

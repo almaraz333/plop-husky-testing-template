@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# A template for fresh React Typescript projects including:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- An E2E test suite with Cypress.
+- An integration/unit test suite with Jest.
+- Plop for generating components, utils, and hooks.
+  - Components are generated with an index file from which they are exported, a types file, a Cypress testing file, an optional sass file
+  - Utils are generated with an index file from which they are exported, a types file, and a Jest testing file.
+  - Hooks are generated with an index file from which they are exported and a Jest testing file.
+- Husky pre-push check to ensure all tests pass before pushing.
 
 ## Available Scripts
 
@@ -16,8 +22,15 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner. Cypress is used for full E2E testing withing browser for components. Jest is used to test utils and hooks.
+
+### `npm test:cypress`
+
+Launches the test runner for Cypress only (i.e components).
+
+### `npm test:jest`
+
+Launches the test runner for Jest only (i.e utils and hooks).
 
 ### `npm run build`
 

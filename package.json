@@ -22,7 +22,6 @@
     "test": "cypress run-ct && jest",
     "test:jest": "jest",
     "test:cypress": "cypress run-ct",
-    "test:components": "cypress run-ct",
     "eject": "react-scripts eject",
     "generate": "plop",
     "prepare": "husky install"
