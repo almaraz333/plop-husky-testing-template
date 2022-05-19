@@ -1,3 +1,3 @@
 import { useState, useEffect } from 'react'; 
 
-export const {{camelCase name}} = () => { };
+export const useAdd = () => { };

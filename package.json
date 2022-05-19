@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cypress run-ct && jest",
-    "test:utils": "jest src/utils/**/*.spec.ts",
+    "test:jest": "jest",
+    "test:cypress": "cypress run-ct",
     "test:components": "cypress run-ct",
     "eject": "react-scripts eject",
     "generate": "plop",
@@ -45,10 +46,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
     "@cypress/react": "^5.12.5",
     "@cypress/webpack-dev-server": "^1.8.4",
-    "babel-jest": "^28.1.0",
     "cypress": "^9.6.1",
     "husky": "^8.0.1",
     "plop": "^3.1.0",
@@ -58,9 +58,6 @@
     "collectCoverage": true,
     "testMatch": [
       "**/*.spec.ts"
-    ],
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    }
+    ]
   }
 }

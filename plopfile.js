@@ -56,7 +56,7 @@ module.exports = (plop) => {
     actions: [
       {
         type: "add",
-        path: "src/hooks/{{camelCase name}}.ts",
+        path: "src/hooks/{{camelCase name}}/{{camelCase name}}.ts",
         templateFile: "plop-templates/Hook/hook.js.hbs"
       },
       {
@@ -70,6 +70,16 @@ module.exports = (plop) => {
         path: "src/hooks/index.ts",
         pattern: `/* PLOP_INJECT_EXPORT */`,
         template: `export { {{camelCase name}} } from './{{camelCase name}}';`
+      },
+      {
+        type: "add",
+        path: "src/hooks/{{camelCase name}}/{{camelCase name}}.spec.ts",
+        templateFile: "plop-templates/Hook/hook.spec.js.hbs"
+      },
+      {
+        type: "add",
+        path: "src/hooks/{{camelCase name}}/index.ts",
+        templateFile: "plop-templates/Hook/index.js.hbs"
       }
     ]
   });
