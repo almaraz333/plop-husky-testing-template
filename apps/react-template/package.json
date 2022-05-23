@@ -26,7 +26,7 @@
     "generate": "plop",
     "prepare": "husky install",
     "lint:css": "stylelint './src/**/*.tsx'",
-    "lint": "lint:css",
+    "lint": "npm run lint:css",
     "serve": "npm start"
   },
   "eslintConfig": {
