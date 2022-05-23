@@ -66,5 +66,10 @@
     "testMatch": [
       "**/*.spec.ts"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && npm run lint"
+    }
   }
 }
