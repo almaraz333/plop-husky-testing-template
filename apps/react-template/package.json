@@ -19,7 +19,7 @@
   "scripts": {
     "start": "craco start",
     "build": "BUILD_PATH=../../dist/apps/react-template craco build",
-    "test": "craco test",
+    "test": "jest && cypress run-ct",
     "test:jest": "jest",
     "test:cypress": "cypress run-ct",
     "eject": "react-scripts eject",
