@@ -1,0 +1,1 @@
+export { test3 } from './test3';

@@ -1,0 +1,1 @@
+export { useTest3 } from './useTest3';

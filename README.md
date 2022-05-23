@@ -3,10 +3,11 @@
 - An E2E test suite with Cypress.
 - An integration/unit test suite with Jest.
 - Plop for generating components, utils, and hooks.
-  - Components are generated with an index file from which they are exported, a types file, a Cypress testing file, an optional sass file
+  - Components are generated with an index file from which they are exported, a types file, a Cypress testing file, an optional styled component file
   - Utils are generated with an index file from which they are exported, a types file, and a Jest testing file.
   - Hooks are generated with an index file from which they are exported and a Jest testing file.
 - Husky pre-push check to ensure all tests pass before pushing.
+- Styles normalized with normalize.css.
 
 ## Available Scripts
 

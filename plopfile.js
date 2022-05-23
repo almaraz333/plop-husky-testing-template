@@ -8,18 +8,13 @@ module.exports = (plop) => {
         message: "What is your component's name?"
       },
       {
-        type: "input",
-        name: "addStyles",
-        message: "Does this component need styles? (y/n)"
+        type: "confirm",
+        name: "isStyledComponent",
+        message: "Is this a styed component?"
       }
     ],
     actions: function (data) {
       let actions = [
-        {
-          type: "add",
-          path: "src/components/{{pascalCase name}}/{{pascalCase name}}.tsx",
-          templateFile: "plop-templates/Component/component.js.hbs"
-        },
         {
           type: "add",
           path: "src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
@@ -49,10 +44,24 @@ module.exports = (plop) => {
         }
       ];
 
-      if (data.addStyles === "y") {
+      if (data.isStyledComponent) {
+        actions.push(
+          {
+            type: "add",
+            path: "src/components/{{pascalCase name}}/{{pascalCase name}}.tsx",
+            templateFile: "plop-templates/Component/styledComponent.js.hbs"
+          },
+          {
+            type: "add",
+            path: "src/components/{{pascalCase name}}/{{pascalCase name}}Styles.tsx",
+            templateFile: "plop-templates/Component/componentStyles.js.hbs"
+          }
+        );
+      } else {
         actions.push({
           type: "add",
-          path: "src/components/{{pascalCase name}}/{{pascalCase name}}.scss"
+          path: "src/components/{{pascalCase name}}/{{pascalCase name}}.tsx",
+          templateFile: "plop-templates/Component/component.js.hbs"
         });
       }
 
